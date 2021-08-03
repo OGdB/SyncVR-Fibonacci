@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Fibonacci : MonoBehaviour
 {
+    #region Variables
     [SerializeField] private int N1 = 0;
     [SerializeField] private int N2 = 1;
     [SerializeField] private float fadeSpeed = 3f;
@@ -12,26 +13,16 @@ public class Fibonacci : MonoBehaviour
     [SerializeField] private TMPro.TextMeshPro n1Text = null;
     [SerializeField] private TMPro.TextMeshPro n2Text = null;
     [SerializeField] private Animator animator = null;
+    #endregion
+    
+    private void Start() => ChangeNumbers();
 
-    private void Start()
+    private void ChangeNumbers()
     {
         n1Text.text = N1.ToString();
         n2Text.text = N2.ToString();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            StopAllCoroutines();
-            StartCoroutine(FadeText(n1Text, false));
-        }        
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            StopAllCoroutines();
-            StartCoroutine(FadeText(n1Text, true));
-        }
-    }
     public void StartAnimation()
     {
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Bonk"))
