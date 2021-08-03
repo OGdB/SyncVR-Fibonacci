@@ -1,0 +1,50 @@
+{
+    "name": "Standard",
+    "maps": [
+        {
+            "name": "Interact",
+            "id": "cd1f7424-9113-4d87-a425-6ac2db71a607",
+            "actions": [
+                {
+                    "name": "Select",
+                    "type": "Button",
+                    "id": "1698974c-e9db-4655-80f9-e3437d0d1e07",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1c4ff02b-8378-46f4-9d31-56aa749d840d",
+                    "path": "<Mouse>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Input",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1d9eb6b1-713a-491c-8db1-04fc478d9417",
+                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Input",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Input",
+            "bindingGroup": "Input",
+            "devices": []
+        }
+    ]
+}
