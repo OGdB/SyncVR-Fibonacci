@@ -38,26 +38,5 @@ public class Fibonacci : MonoBehaviour
         N2 = newNumber;
 
         ChangeNumbers();
-
-        // Instantiate New TMPro Text (Prefab?) moving to a location under the N2 Transform.
-            // New TMPro.TextMeshPro
-            // Set values
-            // Start Animation
-
-        // Camera accordingly moves down a bit.
     }
-    
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            GetNextFibonacciSequence();
-        }
-    }
-
-    // N1 Knocks N2 away and becomes the sum of the numbers.
-    // N2 gets knocked away and goes to N1
-    // In the end the numbers and their values switch around in the background.
-    // =Reset
-
 }
