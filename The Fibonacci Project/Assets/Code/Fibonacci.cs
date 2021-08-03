@@ -1,12 +1,11 @@
-﻿using System.Collections;
+﻿using System.Numerics;
 using UnityEngine;
 
 public class Fibonacci : MonoBehaviour
 {
     #region Variables
-    [SerializeField] private int N1 = 0;
-    [SerializeField] private int N2 = 1;
-    [SerializeField] private float fadeSpeed = 3f;
+    private BigInteger N1 = 0;
+    private BigInteger N2 = 1;
 
     [Header("Assignables")]
     [Space(5)]
@@ -33,40 +32,32 @@ public class Fibonacci : MonoBehaviour
 
     public void GetNextFibonacciSequence()
     {
-        int newNumber = N1 + N2;
+        BigInteger newNumber = N1 + N2;
 
         N1 = N2;
         N2 = newNumber;
 
-        n1Text.text = N1.ToString();
-        n2Text.text = N2.ToString();
+        ChangeNumbers();
+
+        // Instantiate New TMPro Text (Prefab?) moving to a location under the N2 Transform.
+            // New TMPro.TextMeshPro
+            // Set values
+            // Start Animation
+
+        // Camera accordingly moves down a bit.
     }
-
-/// <summary>
-/// Fade text in or out
-/// </summary>
-/// <param name="text"></param>
-/// <param name="fadeIn"></param>
-/// <returns></returns>
-    private IEnumerator FadeText(TMPro.TextMeshPro text, bool fadeIn)
+    
+    private void Update()
     {
-        int targetAlpha = fadeIn ? 1 : 0;
-        float startTime = Time.time;
-        float startAlpha = text.color.a;
-
-        while (text.color.a != targetAlpha)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            float timeSinceStarted = Time.time - startTime;
-            float progress = timeSinceStarted / fadeSpeed;
-
-            float newAlpha = Mathf.Lerp(startAlpha, targetAlpha, progress);
-
-            Color newColor = text.color;
-            newColor.a = newAlpha;
-
-            text.color = newColor;
-
-            yield return new WaitForFixedUpdate();
+            GetNextFibonacciSequence();
         }
     }
+
+    // N1 Knocks N2 away and becomes the sum of the numbers.
+    // N2 gets knocked away and goes to N1
+    // In the end the numbers and their values switch around in the background.
+    // =Reset
+
 }
